@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Misiones Diarias</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+      background: linear-gradient(-45deg, #6DD5FA, #2980B9, #70e1f5, #3498db);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      padding: 2rem;
+      text-align: center;
+      background-color: rgba(0,0,0,0.3);
+      border-bottom: 2px solid #fff;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .sub {
+      font-size: 1.2rem;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    .day {
+      background-color: rgba(255,255,255,0.1);
+      padding: 1.5rem;
+      border-radius: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .day h2 {
+      margin-top: 0;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    .points {
+      text-align: center;
+      font-size: 1.3rem;
+      margin-top: 2rem;
+    }
+
+    .notif {
+      background-color: rgba(0,0,0,0.4);
+      border-left: 5px solid #00ff9d;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🎮 Misiones Diarias</h1>
+    <p class="sub">Jugador: <strong>Nel</strong></p>
+    <p>✅ Si completas mínimo 3 de 4 misiones al día, desbloqueas la recompensa diaria 🎁</p>
+  </header>
+  <main>
+    <div class="day">
+      <h2>Nivel 1 – Lunes</h2>
+      <ul>
+        <li>Levantarse antes de las 9:00 am</li>
+        <li>Entrenar completo (aunque sea suave)</li>
+        <li>Orar o agradecer por algo que haya vivido ese día (puede ser breve)</li>
+        <li>Dormir antes de las 12:00 am</li>
+      </ul>
+    </div>
+
+    <div class="day">
+      <h2>Nivel 2 – Martes</h2>
+      <ul>
+        <li>Despertar y desayunar antes de las 9:30 am</li>
+        <li>Escribirle a un amigo en Colombia para saludarlo o ponerse al día</li>
+        <li>Hacer 1 pausa de gratitud (pensar o escribir algo que le hizo bien)</li>
+        <li>Dormir antes de las 11:30 pm</li>
+      </ul>
+    </div>
+
+    <div class="day">
+      <h2>Nivel 3 – Miércoles</h2>
+      <ul>
+        <li>Completar el entrenamiento</li>
+        <li>Llamar a mamá</li>
+        <li>Hacer algo pequeño que lo acerque a un objetivo personal (leer 5 min, escribir una idea, etc.)</li>
+        <li>Dormir antes de las 12:00 am</li>
+      </ul>
+    </div>
+
+    <div class="day">
+      <h2>Nivel 4 – Jueves</h2>
+      <ul>
+        <li>Entrenar, aunque sea con flojera</li>
+        <li>Hacer una pausa sin pantallas de 10 minutos (respirar, caminar, estirarse)</li>
+        <li>Mandar un audio o un mensaje que exprese cómo se siente</li>
+        <li>Dormir antes de las 11:30 pm</li>
+      </ul>
+    </div>
+
+    <div class="day">
+      <h2>Nivel 5 – Viernes</h2>
+      <ul>
+        <li>Ir a trabajar sin atrasarse</li>
+        <li>Escuchar música feliz mientras se alista</li>
+        <li>Escribir 3 cosas que le hicieron sentir bien durante la semana</li>
+        <li>Dormir al menos 8 horas esa noche</li>
+      </ul>
+    </div>
+
+    <div class="points">
+      ⭐ Puntos Semanales: <span id="points">0</span>
+    </div>
+
+    <div class="notif" id="notificacion">
+      ⏰ ¡Recuerda: estás más cerca de tu meta de lo que crees! 💪
+    </div>
+  </main>
+
+  <script>
+    // Simula contador de puntos semanales
+    let puntos = 0;
+    function sumarPunto() {
+      puntos += 1;
+      document.getElementById('points').textContent = puntos;
+      alert('🎉 ¡Misión cumplida! +1 punto');
+    }
+
+    // Notificaciones motivacionales
+    function notificacionMotivacional() {
+      const frases = [
+        '💡 Hoy es una nueva oportunidad para avanzar.',
+        '🎯 Cada pequeño paso cuenta.',
+        '🔥 Lo estás haciendo increíble, sigue así.',
+        '🌱 No subestimes el poder de lo constante.',
+        '🚀 ¡Vamos Nel, tú puedes con todo esto!'
+      ];
+      const msg = frases[Math.floor(Math.random() * frases.length)];
+      document.getElementById('notificacion').textContent = msg;
+    }
+    setInterval(notificacionMotivacional, 21600000); // cada 6 horas
+  </script>
+</body>
+</html>
